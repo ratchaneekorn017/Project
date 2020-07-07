@@ -3,6 +3,6 @@
 // 	mysqli_query($conn, "SET NAMES 'utf8' ");
 // error_reporting( error_reporting() & ~E_NOTICE );
 // date_default_timezone_set('Asia/Bangkok');
-$dbconn = pg_connect("host=ec2-52-204-232-46.compute-1.amazonaws.com dbname=dfeupmn2kslm1n user=qhthkglklzzsfc password=5355edb6ce8ccb53e95d0cd067f27d0705edd9b0f5af6ae244b15713fa4c65e3")
+$conn = pg_connect("host=ec2-52-204-232-46.compute-1.amazonaws.com dbname=dfeupmn2kslm1n user=qhthkglklzzsfc password=5355edb6ce8ccb53e95d0cd067f27d0705edd9b0f5af6ae244b15713fa4c65e3")
     or die('Could not connect: ' . pg_last_error());
 ?>
