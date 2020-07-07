@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php
 
-// include("condb.php");
+include("condb.php");
 include('h.php');
 include("head1.php");
 include("navbar.php");
