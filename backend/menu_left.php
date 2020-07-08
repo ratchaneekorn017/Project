@@ -5,7 +5,7 @@ $sql = "SELECT * FROM tbl_member WHERE member_id='$member_id' ";
 $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
 $row = mysqli_fetch_array($result);
 
-include 'h.php'; ?>
+include('h.php'); ?>
 
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
