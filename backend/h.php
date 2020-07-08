@@ -17,8 +17,9 @@ $userlevel = $_SESSION['userlevel'];
 
 //
 
-$sql ="SELECT * FROM tbl_member WHERE member_id='9'";
-$result = mysqli_query($conn,$sql) or die ("Error in query: $sql $conn" . mysqli_error($conn));
+$sql ="SELECT * FROM tbl_member WHERE member_id='".$member_id."'";
+// $result = mysqli_query($conn,$sql) or die ("Error in query: $sql $conn" . mysqli_error($conn));
+$result = mysqli_query($conn, "Select * from tbl_member where member_id='$member_id'") or die("$con, $conn, $sql".mysqli_error($db));
 $row = mysqli_fetch_array($result);
 extract($row);
 
