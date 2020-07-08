@@ -11,6 +11,7 @@ include("navbar.php");
 <br><br>
 <div align="center">
 <h1>สมาชิกในกลุ่ม</h1>
+<br>
 <p class="bb">นางสาวชมพูนุช  เวสโกสิทธิ์ ID 61122202011</p>
 <p>นางสาวจรรยพร  ทองทุ่ม ID 61122202016</p>
 <p>นางสาวรัชนีกร  แย้มปั้น ID 61122202017</p>
@@ -19,5 +20,5 @@ include("navbar.php");
 <br><br><br><br>
 <br>
 
-<?php include 'footer.php';
+<?php include 'footer1.php';
 include 'script4.php' ?>

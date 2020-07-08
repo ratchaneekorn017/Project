@@ -1,12 +1,12 @@
 <?php
 error_reporting( error_reporting() & ~E_NOTICE );
 //1. เชื่อมต่อ database:
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 $o_id = $_REQUEST["ID"];
 
 $sql = "SELECT * FROM payment WHERE o_id='$o_id'";
 
-$result = mysqli_query($con, $sql)or die ("Error in query: $sql" . mysqli_error($con));
+$result = mysqli_query($conn, $sql)or die ("Error in query: $sql" . mysqli_error($conn));
 $row = mysqli_fetch_array($result);
 extract($row);
 //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
@@ -39,5 +39,5 @@ echo ' <table id="example1" class="table table-bordered table-striped">';
   }
 echo "</table>";
 //5. close connection
-mysqli_close($con);
+mysqli_close($conn);
 ?>

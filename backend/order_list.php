@@ -1,12 +1,12 @@
 <?php
 error_reporting( error_reporting() & ~E_NOTICE );
 //1. เชื่อมต่อ database:
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 //2. query ข้อมูลจากตาราง tb_admin:
 
-$query = "SELECT * FROM order_head as p INNER JOIN order_detail as t ON p.o_id=t.o_id INNER JOIN tbl_product as a ON t.p_id=a.p_id ORDER BY p.o_id ASC" or die("Error:" . mysqli_error($con));
+$query = "SELECT * FROM order_head as p INNER JOIN order_detail as t ON p.o_id=t.o_id INNER JOIN tbl_product as a ON t.p_id=a.p_id ORDER BY p.o_id ASC" or die("Error:" . mysqli_error($conn));
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
-$result = mysqli_query($con, $query);
+$result = mysqli_query($conn, $query);
 //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
 echo ' <table id="example1" class="table table-bordered table-striped">';
   //หัวข้อตาราง
@@ -47,5 +47,5 @@ echo ' <table id="example1" class="table table-bordered table-striped">';
   }
 echo "</table>";
 //5. close connection
-mysqli_close($con);
+mysqli_close($conn);
 ?>

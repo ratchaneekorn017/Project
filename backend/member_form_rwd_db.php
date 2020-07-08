@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <?php
 //1. เชื่อมต่อ database: 
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 
 //สร้างตัวแปรสำหรับรับค่าที่นำมาแก้ไขจากฟอร์ม
 	$member_id = $_POST["member_id"];
@@ -14,9 +14,9 @@ include('connections.php');  //ไฟล์เชื่อมต่อกับ 
 			password ='$m_pass'
 			WHERE member_id='$member_id' ";
 
-$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
+$result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($conn));
 
-mysqli_close($con); //ปิดการเชื่อมต่อ database 
+mysqli_close($conn); //ปิดการเชื่อมต่อ database 
 
 //จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
 	

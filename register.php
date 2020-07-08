@@ -52,7 +52,7 @@ var eng = /^([a-zA-Z0-9])+$/i;
 
 if (!(eng.test(document.all.text1.value)))
 {
-alert("กรุณากรอกเป็นภาษาอังกฤษด้วย");
+alert("กรุณากรอก Username เป็นภาษาอังกฤษ");
 document.all.text1.select();
 return false;
 }
@@ -90,7 +90,7 @@ return false;
   <div class="form-group">
     <div class="col-sm-4" align="right"> Username </div>
     <div class="col-sm-4" align="left">
-      <input  name="m_user" type="text" class="form-control" id="text1"  required />
+      <input  name="m_user" type="username" class="form-control" id="text1"  required />
     </div>
   </div>
   

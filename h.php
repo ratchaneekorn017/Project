@@ -131,7 +131,9 @@ input[type=email]:focus {
 input[type=password]:focus {
   border: 1px solid #4CAF50;
 }
-
+input[type=username]:focus {
+  border: 1px solid #4CAF50;
+}
 h1 {
   font-family: 'Sriracha', cursive;
 

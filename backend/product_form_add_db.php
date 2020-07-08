@@ -7,7 +7,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 // print_r($_POST);
 // exit();
 //1. เชื่อมต่อ database:
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 //Set ว/ด/ป เวลา ให้เป็นของประเทศไทย
 date_default_timezone_set('Asia/Bangkok');
 	//สร้างตัวแปรวันที่เพื่อเอาไปตั้งชื่อไฟล์ที่อัพโหลด
@@ -57,9 +57,9 @@ $p_img =(isset($_POST['p_img']) ? $_POST['p_img'] :'');
 		'$p_detail',
 		'$newname')";
 		
-		$result = mysqli_query($con, $sql);// or die ("Error in query: $sql " . mysqli_error());
+		$result = mysqli_query($conn, $sql);// or die ("Error in query: $sql " . mysqli_error());
 	
-	mysqli_close($con);
+	mysqli_close($conn);
 	// javascript แสดงการ upload file
 	
 	

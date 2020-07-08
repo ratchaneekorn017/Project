@@ -1,10 +1,11 @@
-<?php
+
+<?php 
 session_start();
 //echo '<pre>';
 //print_r($_SESSION);
 //echo'</pre>';
-include('connections.php');
-
+include('../condb.php');
+  
 
 $member_id = $_SESSION['member_id'];
 $m_name = $_SESSION['m_name'];
@@ -16,22 +17,21 @@ $userlevel = $_SESSION['userlevel'];
 
 //
 
-$sql = "SELECT * FROM tbl_member WHERE member_id='" . $member_id . "'";
-$result = mysqli_query($con, $sql) or die("Error in query: $sql $conn" . mysqli_error($conn));
+$sql ="SELECT * FROM tbl_member WHERE member_id=$member_id";
+$result = mysqli_query($conn, $sql) or die ("Error in query: $sql" . mysqli_error($conn));
 $row = mysqli_fetch_array($result);
 extract($row);
 
 $m_img = $row['m_img'];
 $m_name = $row['m_name'];
 
-if ($userlevel != 'a') {
-  Header("location:../logout.php");
+if ($userlevel!='a'){
+    Header("location:../logout.php");
 }
 
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,21 +47,22 @@ if ($userlevel != 'a') {
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+ 
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js">    </script>
 
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-  <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"> </script>
+<script>
+  
+$(document).ready(function() {
+$('#example').DataTable( {
+"aaSorting" :[[0,'desc']],
+//"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
+});
+} );
 
-  <script>
-    $(document).ready(function() {
-      $('#example').DataTable({
-        "aaSorting": [
-          [0, 'desc']
-        ],
-        //"lengthMenu":[[20,50, 100, -1], [20,50, 100,"All"]]
-      });
-    });
-  </script>
+</script>
 
 
 </head>

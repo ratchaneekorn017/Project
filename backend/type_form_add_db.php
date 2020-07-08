@@ -1,5 +1,5 @@
 <?php
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 	//สร้างตัวแปรเก็บค่าที่รับมาจากฟอร์ม
 	$type_name = $_REQUEST["type_name"];
 	
@@ -7,10 +7,10 @@ include('connections.php');  //ไฟล์เชื่อมต่อกับ 
 	$sql = "INSERT INTO tbl_type(type_name)
 			 VALUES('$type_name')";
 
-	$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
+	$result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($conn));
 	
 	//ปิดการเชื่อมต่อ database
-	mysqli_close($con);
+	mysqli_close($conn);
 	//จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
 	
 	if($result){

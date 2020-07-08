@@ -92,5 +92,6 @@ mysqli_close($conn);
 
 </div>
 </body>
-</html>
+<?php include 'footer1.php';
+include 'script4.php'; ?>
 

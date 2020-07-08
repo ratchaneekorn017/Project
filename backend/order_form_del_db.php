@@ -1,14 +1,18 @@
 <meta charset="UTF-8">
 <?php
-//1. เชื่อมต่อ database: 
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
-//สร้างตัวแปรสำหรับรับค่า member_id จากไฟล์แสดงข้อมูล
+
+include('../condb.php');  
 $o_id = $_REQUEST["ID"];
 
-//ลบข้อมูลออกจาก database ตาม member_id ที่ส่งมา
 
-$sql = "DELETE FROM order_head WHERE o_id='$o_id' ";
-$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
+
+$sql = "DELETE FROM order_head  WHERE o_id='$o_id' ";
+$result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($conn));
+$sql1 = "DELETE FROM  order_detail  WHERE o_id='$o_id' ";
+$result1 = mysqli_query($conn, $sql1) or die ("Error in query: $sq1l " . mysqli_error($conn));
+$sql2 = "DELETE FROM  ordertrackhistory WHERE o_id='$o_id' ";
+$result2 = mysqli_query($conn, $sql2) or die ("Error in query: $sql2 " . mysqli_error($conn));
+
 
 //จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
 	

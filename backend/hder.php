@@ -1,13 +1,13 @@
 <?php 
 session_start();
-include('connections.php');
+include('../condb.php');
 
 $m_id = $_SESSION['member_id'];
 $m_name = $_SESSION['m_name'];
 $level = $_SESSION['userlervl'];
 
 $sql ="SELECT m_name, m_img FROM tbl_member WHERE member_id=$m_id";
-$result = mysqli_query($con, $sql) or die ("Error in query: $sql" . mysqli_error($con));
+$result = mysqli_query($conn, $sql) or die ("Error in query: $sql" . mysqli_error($conn));
 $row = mysqli_fetch_array($result);
 extract($row);
 

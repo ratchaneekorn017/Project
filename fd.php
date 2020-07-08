@@ -18,4 +18,6 @@ include 'navbar.php'
 
 <div align="center"><a class="b" href="oder.php?o_id=<?php echo $_GET["o_id"];?> ">คลิกที่นี่เพื่อดูรายละเอียดการสั่งซื้อ</a></div>
 </div>
-<?php include 'script4.php'?>
+<?php 
+include 'footer1.php';
+include 'script4.php'?>

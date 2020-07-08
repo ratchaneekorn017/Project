@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <?php
 //1. เชื่อมต่อ database:
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 $p_id = $_GET["ID"];
 //2. query ข้อมูลจากตาราง:
 $sql = "SELECT p.*,t.type_name
@@ -9,26 +9,15 @@ FROM tbl_product as p
 INNER JOIN tbl_type as t ON p.type_id = t.type_id
 WHERE p.p_id = '$p_id'
 ORDER BY p.type_id asc";
-$result2 = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
+$result2 = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($conn));
 $row = mysqli_fetch_array($result2);
 extract($row);
 
 
-//2. query ข้อมูลจากตาราง tb_member:
-$query = "SELECT * FROM tbl_type ORDER BY type_id asc" or die("Error:" . mysqli_error($con));
-//3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
-$result = mysqli_query($con, $query);
-//4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
+$query = "SELECT * FROM tbl_type ORDER BY type_id asc" or die("Error:" . mysqli_error($conn));
 
+$result = mysqli_query($conn, $query);
 
-// $query2 = "SELECT p.*,t.type_name
-// FROM tbl_product as p 
-// INNER JOIN tbl_type as t ON p.type_id = t.type_id
-// WHERE p_id = '$p_id';
-// ORDER BY p.type_id asc" or die("Error:" . mysqli_error());
-// //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
-// $result2 = mysqli_query($con, $query2);
-//4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
 
 
 

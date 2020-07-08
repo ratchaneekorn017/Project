@@ -14,7 +14,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-        order
+        payment
         <small>advanced tables</small>
         </h1>
         <ol class="breadcrumb">
@@ -29,7 +29,7 @@
           <div class="col-xs-12">
             <div class="box">
               <div class="box-header">
-                <h3 class="box-title">Data Table With order
+                <h3 class="box-title">Data Table With payment
                
               </div>
               <!-- /.box-header -->
@@ -39,6 +39,7 @@
                   
                   
                   <?php
+                   
                    {
                   include('payment_list.php');
                   }

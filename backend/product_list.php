@@ -1,12 +1,12 @@
 <?php
 error_reporting( error_reporting() & ~E_NOTICE );
 
-include('connections.php');  
+include('../condb.php');  
 $query = " SELECT * FROM tbl_product as p 
 INNER JOIN tbl_type  as t ON p.type_id=t.type_id 
-ORDER BY p.p_id ASC" or die("Error:" . mysqli_error($con));
+ORDER BY p.p_id ASC" or die("Error:" . mysqli_error($conn));
 
-$result = mysqli_query($con, $query);
+$result = mysqli_query($conn, $query);
 
 
 echo ' <table id="example1" class="table table-bordered table-striped">';
@@ -16,7 +16,7 @@ echo ' <table id="example1" class="table table-bordered table-striped">';
       <th width='5%'>id</th>
       <th width=8%>type</th>
       <th width=15%>name</th>
-      <th width=30%>p_detail</th>
+      <th width=30%>detail</th>
       <th width=15%>price</th>
       <th width=5%>quantity</th>
       <th width=15%>img</th>
@@ -43,5 +43,5 @@ echo ' <table id="example1" class="table table-bordered table-striped">';
   }
 echo "</table>";
 //5. close connection
-mysqli_close($con);
+mysqli_close($conn);
 ?>

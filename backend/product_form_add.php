@@ -1,10 +1,10 @@
 <?php
 //1. เชื่อมต่อ database:
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 //2. query ข้อมูลจากตาราง tb_member:
-$query = "SELECT * FROM tbl_type ORDER BY type_id asc" or die("Error:" . mysqli_error($con));
+$query = "SELECT * FROM tbl_type ORDER BY type_id asc" or die("Error:" . mysqli_error($conn));
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
-$result = mysqli_query($con, $query);
+$result = mysqli_query($conn, $query);
 //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
 ?>
 <!-- Latest compiled and minified CSS -->
@@ -71,5 +71,5 @@ $result = mysqli_query($con, $query);
   </div>
 </div>
 <?php
-mysqli_close($con);
+mysqli_close($conn);
 ?>

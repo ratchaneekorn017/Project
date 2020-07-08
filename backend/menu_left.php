@@ -1,11 +1,11 @@
 <?php 
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 //2. query ข้อมูลจากตาราง:
 $sql = "SELECT * FROM tbl_member WHERE member_id='$member_id' ";
-$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
+$result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($conn));
 $row = mysqli_fetch_array($result);
 
-include('h.php'); ?>
+include 'h.php'; ?>
 
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->

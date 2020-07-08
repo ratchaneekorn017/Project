@@ -1,5 +1,5 @@
 <?php
-include('connections.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+include('../condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 	//สร้างตัวแปรเก็บค่าที่รับมาจากฟอร์ม
 	$m_user = $_POST["m_user"];
 	$m_pass = md5($_POST["password"]);
@@ -29,10 +29,10 @@ include('connections.php');  //ไฟล์เชื่อมต่อกับ 
 	$sql = "INSERT INTO tbl_member m_user,  password, m_name, m_lname , m_email, m_tel, m_address ,m_img)
 			 VALUES('$m_user', '$m_pass', '$m_name', '$m_lname' , '$m_email', '$m_tel', '$m_address', '$newname')";
 
-	$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
+	$result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($conn));
 	
 	//ปิดการเชื่อมต่อ database
-	mysqli_close($con);
+	mysqli_close($conn);
 	//จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
 	
 	if($result){

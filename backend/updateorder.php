@@ -1,13 +1,13 @@
 <?php
 
-include 'connections.php';
+include '../condb.php';
 $o_id = $_REQUEST["ID"];
 if(isset($_POST['submit2'])){
 $status=$_POST['status'];
 $remark=$_POST['remark'];//space char
 
-$query=mysqli_query($con,"insert into ordertrackhistory(o_id,status,remark) values('$o_id','$status','$remark')");
-$sql=mysqli_query($con,"update  order_head set status='$status' ,remark='$remark' where o_id='$o_id'");
+$query=mysqli_query($conn,"insert into ordertrackhistory(o_id,status,remark) values('$o_id','$status','$remark')");
+$sql=mysqli_query($conn,"update  order_head set status='$status' ,remark='$remark' where o_id='$o_id'");
 echo "<script>alert('Order updated sucessfully...');</script>";
 //}
 }
@@ -46,7 +46,7 @@ window.print();
       <td  class="fontkink"><?php echo $o_id;?></td>
     </tr>
     <?php 
-$ret = mysqli_query($con,"SELECT * FROM ordertrackhistory WHERE o_id='$o_id'");
+$ret = mysqli_query($conn,"SELECT * FROM ordertrackhistory WHERE o_id='$o_id'");
      while($row=mysqli_fetch_array($ret))
       {
      ?>
@@ -73,7 +73,7 @@ $ret = mysqli_query($con,"SELECT * FROM ordertrackhistory WHERE o_id='$o_id'");
    <?php } ?>
    <?php 
 $st='กำลังจัดส่ง';
-   $rt = mysqli_query($con,"SELECT * FROM order_head WHERE o_id='$o_id'");
+   $rt = mysqli_query($conn,"SELECT * FROM order_head WHERE o_id='$o_id'");
      while($num=mysqli_fetch_array($rt))
      {
      $currrentSt=$num['status'];
