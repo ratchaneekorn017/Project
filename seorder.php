@@ -50,7 +50,7 @@ if($act=='order'){
 
 }
 
-include 'footer.php';
+include 'footer2.php';
 include 'script4.php';?>
 
 
