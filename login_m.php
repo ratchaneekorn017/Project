@@ -6,9 +6,9 @@ session_start();
         //รับค่า user & password
                   $m_user = $_POST['m_user'];
                   // $password = md5($_POST["password"]);
-                  $password = $_POST['m_pass'];
+                  $password = $_POST['password'];
         //query 
-                  $sql="SELECT * FROM tbl_member WHERE m_user='".$m_user."' AND password='".$password."' ";
+                  $sql="SELECT * FROM tbl_member WHERE m_user='".$m_user."' AND m_pass='".$password."' ";
 
                   $result = mysqli_query($conn,$sql);
 
