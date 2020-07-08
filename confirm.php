@@ -11,6 +11,7 @@ include 'condb.php';
 //2. query ข้อมูลจากตาราง:
 $qmember = "SELECT
  m_name,
+ m_lname,
  m_address,
  m_email,
  m_tel
