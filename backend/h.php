@@ -17,7 +17,7 @@ $userlevel = $_SESSION['userlevel'];
 
 //
 
-$sql ="SELECT * FROM tbl_member WHERE member_id=$member_id";
+$sql ="SELECT * FROM tbl_member WHERE member_id='".$member_id."'";
 $result = mysqli_query($con, $sql) or die ("Error in query: $sql" . mysqli_error($con));
 $row = mysqli_fetch_array($result);
 extract($row);
