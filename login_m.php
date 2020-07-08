@@ -5,7 +5,8 @@ session_start();
                   include("condb.php");
         //รับค่า user & password
                   $m_user = $_POST['m_user'];
-                  $password = md5($_POST["password"]);
+                  // $password = md5($_POST["password"]);
+                  $password = $_POST['password'];
         //query 
                   $sql="SELECT * FROM tbl_member WHERE m_user='".$m_user."' AND password='".$password."' ";
 
