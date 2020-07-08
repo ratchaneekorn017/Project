@@ -44,7 +44,8 @@ include('../condb.php');  //ไฟล์เชื่อมต่อกับ dat
 			m_lname= '$m_lname',
 			m_email='$m_email',
 			m_tel='$m_tel', 
-			m_address='$m_address', 
+			m_address='$m_address',
+			userlevel='$userlevel', 
 			m_img =  '$newname' 
 			WHERE member_id='$member_id' ";
 
