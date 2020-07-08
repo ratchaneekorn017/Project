@@ -8,7 +8,7 @@ session_start();
                   // $password = md5($_POST["password"]);
                   $password = $_POST['password'];
         //query 
-                  $sql="SELECT * FROM tbl_member WHERE m_user='".$m_user."' AND m_pass='".$password."' ";
+                  $sql="SELECT * FROM tbl_member WHERE m_user='".$m_user."' AND password='".$password."' ";
 
                   $result = mysqli_query($conn,$sql);
 
