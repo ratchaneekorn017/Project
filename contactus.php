@@ -20,5 +20,5 @@ include("navbar.php");
 <br><br><br><br>
 <br>
 
-<?php include 'footer1.php';
+<?php include 'footer.php';
 include 'script4.php' ?>

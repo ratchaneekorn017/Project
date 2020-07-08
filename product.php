@@ -36,5 +36,5 @@ include('h.php');
 </body>
 
 <?php 
-include('footer2.php');
+include('footer.php');
 include('script4.php');?>
